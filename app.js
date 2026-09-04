@@ -1,8 +1,7 @@
 (() => {
   "use strict";
 
-  //const DEFAULTS = { rate: 1400, markup: 30, wa: };{
-  { "9647519099593" };
+  const DEFAULTS = { rate: 1400, markup: 30, wa:  "9647519099593" };
   const mem = {};
   const store = {
     get(k, d) {
