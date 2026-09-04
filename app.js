@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const DEFAULTS = { rate: 1400, markup: 30, wa:  "000000" };
+
   const mem = {};
   const store = {
     get(k, d) {
@@ -225,17 +225,7 @@
   $("#adminBtn").addEventListener("click", () => {
     $("#rateInput").value = cfg.rate; $("#markupInput").value = cfg.markup; $("#waInput").value = cfg.wa;
     $("#admin").hidden = false;
-  });
-  $("#saveAdmin").addEventListener("click", () => {
-    cfg.rate = Number($("#rateInput").value) || cfg.rate;
-    cfg.markup = Number($("#markupInput").value) || 0;
-    cfg.wa = ($("#waInput").value || cfg.wa).replace(/[^0-9]/g, "");
-    store.set("rate", cfg.rate); store.set("markup", cfg.markup); store.set("wa", cfg.wa);
-    $("#admin").hidden = true;
-    $("#waFooter").href = waLink("Red Zone Store");
-    $("#waFooter").textContent = "WhatsApp: +" + cfg.wa;
-    shown = 0; render(); renderCart();
-  });
+
 
   /* ---------- boot ---------- */
   $("#year").textContent = new Date().getFullYear();
